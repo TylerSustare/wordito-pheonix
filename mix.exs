@@ -68,7 +68,10 @@ defmodule Wordito.MixProject do
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"],
       start: ["phx.server"],
-      debug: ["iex -S mix phx.server"]
+      dev: ["cmd iex -S mix phx.server"],
+      build: ["cmd docker build . -t word"],
+      run: ["cmd docker run -p 4000:4000 word"],
+      deploy: ["cmd fly deploy"]
     ]
   end
 end

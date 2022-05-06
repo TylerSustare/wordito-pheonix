@@ -23,7 +23,15 @@ defmodule Wordito.Application do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Wordito.Supervisor]
-    Supervisor.start_link(children, opts)
+    start = Supervisor.start_link(children, opts)
+
+    # run migrations on startup
+    if Application.fetch_env!(:wordito, :env) == "prod" do
+      path = Application.app_dir(:wordito, "priv/repo/migrations")
+      Ecto.Migrator.run(Wordito.Repo, path, :up, all: true)
+    end
+
+    start
   end
 
   # Tell Phoenix to update the endpoint configuration

@@ -20,6 +20,9 @@ if System.get_env("PHX_SERVER") do
   config :wordito, WorditoWeb.Endpoint, server: true
 end
 
+mix_env = System.get_env("MIX_ENV") || ""
+config :wordito, env: mix_env
+
 if config_env() == :prod do
   database_path =
     System.get_env("DATABASE_PATH") ||

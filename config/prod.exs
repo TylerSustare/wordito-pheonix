@@ -19,9 +19,9 @@ config :logger, level: :info
 # To get SSL working, you will need to add the `https` key
 # to the previous section and set your `:url` port to 443:
 #
-#     config :wordito, WorditoWeb.Endpoint,
+    # config :wordito, WorditoWeb.Endpoint,
 #       ...,
-#       url: [host: "example.com", port: 443],
+      # url: [host: "wordito.fly.dev", port: 443]
 #       https: [
 #         ...,
 #         port: 443,
@@ -43,7 +43,7 @@ config :logger, level: :info
 # We also recommend setting `force_ssl` in your endpoint, ensuring
 # no data is ever sent via http, always redirecting to https:
 #
-#     config :wordito, WorditoWeb.Endpoint,
-#       force_ssl: [hsts: true]
+    # config :wordito, WorditoWeb.Endpoint,
+      # force_ssl: [hsts: true]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.

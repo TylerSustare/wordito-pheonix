@@ -91,6 +91,7 @@ RUN chown nobody /app
 ENV MIX_ENV="prod"
 ENV DATABASE_PATH=/app/wordito.db
 ENV SECRET_KEY_BASE="wVgfyBMWe/tfsmkRZaN19UUgxV9xW3JZVAHO68M0XwTIiqpMpNRGv01JkHMBsRVX"
+ENV PORT=8080
 
 
 # Only copy the final release from the build stage

@@ -14,6 +14,6 @@ defmodule Wordito.Word do
   def changeset(word, attrs) do
     word
     |> cast(attrs, [:word, :characters, :used_at])
-    |> validate_required([:word, :characters, :used_at])
+    |> validate_required([:word, :characters])
   end
 end
