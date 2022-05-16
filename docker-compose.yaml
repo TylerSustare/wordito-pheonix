@@ -1,0 +1,25 @@
+# instructions
+# 1. start 'em up
+# docker-compose up -d
+# 2. stop them
+# docker-compose stop
+# 3. delete 'em. Will also delete data on the container
+# docker-compose down
+
+version: '3.7'
+services: 
+
+  pg-wordito: 
+    container_name: 'pg-wordito'
+    image: postgres:latest
+    ports: 
+      - "5432:5432" 
+    environment: 
+      # - "POSTGRES_PASSWORD=${DB_PASS}" # using an environment variable
+      - "POSTGRES_PASSWORD=postgres"
+    volumes: 
+      # - ./pg:/docker-entrypoint-initdb.d/ # file
+      - local-data:/pg/docker-entrypoint-initdb.d/ # container
+
+volumes:
+    local-data:
