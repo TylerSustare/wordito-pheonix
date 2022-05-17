@@ -60,17 +60,20 @@ defmodule Wordito.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"],
-      dev: ["cmd iex -S mix phx.server"],
-      db: ["cmd docker-compose up -d"],
-      build: ["cmd docker build . -t word"],
-      run: ["cmd docker run -p 4000:4000 word"],
+      "dock.build": ["cmd docker build . -t word"],
+      "dock.run": ["cmd docker run -p 4000:4000 word"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "ecto.setup": ["ecto.create", "ecto.migrate", "seed"],
+      console: ["cmd iex -S mix"],
+      "db.up": ["cmd docker-compose up -d"],
+      "db.stop": ["cmd docker-compose stop"],
+      "db.down": ["cmd docker-compose down"],
       deploy: ["cmd fly deploy"],
-      console: ["cmd iex -S mix"]
+      dev: ["cmd iex -S mix phx.server"],
+      seed: ["run priv/repo/seeds.exs"],
+      setup: ["deps.get", "ecto.setup"],
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
 end

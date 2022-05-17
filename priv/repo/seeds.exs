@@ -10,8 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-IO.puts(:stdio, "Seeding!")
-# Wordito.Repo.delete_all()
+Wordito.Repo.delete_all(Wordito.Word)
 
-# Wordito.Repo.insert!(%Wordito.Word{word: "hello", characters: 5})
-# Wordito.Repo.insert!(%Wordito.Word{word: "test", characters: 4})
+Wordito.Repo.insert!(%Wordito.Word{word: "hello", characters: 5})
+Wordito.Repo.insert!(%Wordito.Word{word: "test", characters: 4})
