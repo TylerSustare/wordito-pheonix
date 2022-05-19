@@ -26,7 +26,8 @@ config :wordito, WorditoWeb.Endpoint,
   secret_key_base: "fDDYG3FnXAZoTs9QqoD7FJA87nOwZi9/02MuGWWQ1J4qgU70cpfzsyov6rmaiOiV",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
