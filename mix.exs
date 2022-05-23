@@ -35,6 +35,7 @@ defmodule Wordito.MixProject do
     [
       {:ecto_sql, "~> 3.6"},
       {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
+      {:ex_heroicons, "~> 0.6.0"},
       {:floki, ">= 0.30.0", only: :test},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
@@ -50,7 +51,7 @@ defmodule Wordito.MixProject do
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
-      {:ex_heroicons, "~> 0.6.0"}
+      {:timex, "~> 3.0"}
     ]
   end
 
