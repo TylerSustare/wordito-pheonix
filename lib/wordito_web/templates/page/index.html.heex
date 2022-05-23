@@ -1,17 +1,25 @@
 <div class="h-56 grid grid-cols-1 content-evenly dark:text-slate-200">
   <div class="text-center">
-    <button class="bg-cyan-500 p-4 rounded-full uppercase" onclick="hello()">
+    <%= content_tag(:button, "4 Letter Game", class: "bg-cyan-500 p-4
+    rounded-full uppercase", onclick: "hello(4)") %>
+    <button class="bg-cyan-500 p-4 rounded-full uppercase" onclick="hello(4)">
       4 Letter Game
     </button>
   </div>
   <div class="text-center">
     <%= button("3 Letter Game", to: "/game/3", class: "bg-red-500 p-4
     rounded-full uppercase", method: :get) %>
+    <button class="bg-red-500 p-4 rounded-full uppercase" onclick="hello(3)">
+      3 Letter Game
+    </button>
   </div>
 </div>
 
 <script>
-  function hello() {
-    alert("hello from 👦🏻 and 👧🏻");
+  function hello(length) {
+    // alert("hello from 👦🏻 and 👧🏻");
+    // window.location.replace(`/game/${length}`);
+    history.pushState({}, "", `/game/${length}`);
+    window.location.reload();
   }
 </script>
