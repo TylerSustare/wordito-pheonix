@@ -1,25 +1,12 @@
 <div class="h-56 grid grid-cols-1 content-evenly dark:text-slate-200">
   <div class="text-center">
-    <%= content_tag(:button, "4 Letter Game", class: "bg-cyan-500 p-4
-    rounded-full uppercase", onclick: "hello(4)") %>
-    <button class="bg-cyan-500 p-4 rounded-full uppercase" onclick="hello(4)">
-      4 Letter Game
-    </button>
+    <%= button("4 Letters", to: "/game/4", class: "bg-gradient-to-r
+    from-cyan-400 via-cyan-300 dark:via-cyan-600 to-cyan-400 p-4 pl-20 pr-20
+    rounded-full uppercase text-xl", method: :get) %>
   </div>
   <div class="text-center">
-    <%= button("3 Letter Game", to: "/game/3", class: "bg-red-500 p-4
-    rounded-full uppercase", method: :get) %>
-    <button class="bg-red-500 p-4 rounded-full uppercase" onclick="hello(3)">
-      3 Letter Game
-    </button>
+    <%= button("3 Letters", to: "/game/3", class: "bg-gradient-to-r from-red-500
+    via-slate-50 dark:via-slate-900 to-red-500 p-4 pr-20 pl-20 rounded-full
+    uppercase text-xl", method: :get)%>
   </div>
 </div>
-
-<script>
-  function hello(length) {
-    // alert("hello from 👦🏻 and 👧🏻");
-    // window.location.replace(`/game/${length}`);
-    history.pushState({}, "", `/game/${length}`);
-    window.location.reload();
-  }
-</script>

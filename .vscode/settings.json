@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "wordito_dev",
+      "database": "wordito_dev",
+      "username": "postgres",
+      "password": "postgres"
+    }
+  ]
+}

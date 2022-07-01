@@ -13,4 +13,5 @@
 Wordito.Repo.delete_all(Wordito.Word)
 
 Wordito.Repo.insert!(%Wordito.Word{word: "hello", characters: 5})
-Wordito.Repo.insert!(%Wordito.Word{word: "test", characters: 4})
+Wordito.Repo.insert!(%Wordito.Word{word: "dogs", characters: 4})
+Wordito.Repo.insert!(%Wordito.Word{word: "cat", characters: 3})
